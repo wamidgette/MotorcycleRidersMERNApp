@@ -12,6 +12,7 @@ const MongoClient = mongodb.MongoClient
 
 const port = process.env.port || 8000
 
+//Connect to server 
 MongoClient.connect(
     process.env.MOTORCYCLE_TRIPS_DB_URI, 
     {
@@ -20,12 +21,10 @@ MongoClient.connect(
         /* useNewUrlParse:true */ //Is not supported - look into this 
     }
 )
-
 .catch(err=>{
     console.error(err.stack)
     process.exit(1)
 })
-
 .then(async client => {
     /* await RidersDAO.injectDB(client) */
     await TripsDAO.injectDB(client)

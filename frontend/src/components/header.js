@@ -4,14 +4,16 @@ import {Link} from 'react-router-dom';
 function Header (props){
     return(
         <header>
-            <h1>This is the Header</h1>
-            <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/trips">Trips</Link></li>
-                <li><Link to="/events">Events</Link></li>
-                <li><Link to="/riders">Riders</Link></li>
-                <li><Link to="/motorcycles">Motorcycles</Link></li>
-            </ul>
+            <nav className="navbar navbar-expand navbar-dark bg-dark">
+            <a href="/" className="navbar-brand">This is the Header</a>
+                <ul className="navbar-nav mr-auto">
+                    <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
+                    <li className="nav-item"><Link className="nav-link" to="/trips">Trips</Link></li>
+                    <li className="nav-item"><Link className="nav-link" to="/events">Events</Link></li>
+                    <li className="nav-item"><Link className="nav-link" to="/riders">Riders</Link></li>
+                    <li className="nav-item"><Link className="nav-link" to="/motorcycles">Motorcycles</Link></li>
+                </ul>
+            </nav>
         </header>
     )
 }

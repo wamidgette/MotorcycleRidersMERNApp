@@ -10,14 +10,15 @@ const router = express.Router()
 //from base url /motorcycleTripsProject - route extensions
 
 /* Trips Routes*/
-router.route("/", "/trips").get(TripsCtrl.getTrips);
-/* router.route("/trips/id/:id").get(TripsCtrl.getTripById); */
-
+/* Get requests */
+router.route("/trips").get(TripsCtrl.getTrips);
+router.route("/trips/id/:id").get(TripsCtrl.getTripById); 
+/* All other requests C, U, D */
 router.route("/trips").post(TripsCtrl.addTrip);
-/* router.route("/trips").put(TripsCtrl.editTrip);
-router.route("/trips").delete(TripsCtrl.deleteTrip) */
+router.route("/trips").put(TripsCtrl.editTrip);
+router.route("/trips").delete(TripsCtrl.deleteTrip) 
 
-
+/* ROUTES TO BE CODED... */
 /* Riders Routes*/
 /* router.route("/riders").get(RidersCtrl.getRiders);
 router.route("/riders/id/:id").get(RidersCtrl.getRiderById);

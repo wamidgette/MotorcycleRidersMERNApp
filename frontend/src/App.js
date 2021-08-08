@@ -1,6 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {useState} from 'react'
+
 /*Routing*/
 import { Routes, Route } from 'react-router-dom';
 /* Global Header and Footer */
@@ -9,13 +11,21 @@ import Footer from './components/footer.js';
 /* Main Page Components */
 import Home from './components/home/home'
 import Events from './components/events/events';
-import Trips from './components/trips/trips';
+import Tripslist from './components/trips/tripsList';
+import Trip from './components/trips/trip';
+import AddTrip from './components/trips/addTrip';
 import Motorcycles from './components/motorcycles/motorcycles';
 import Riders from './components/riders/riders';
 import NotFound from './components/notFound';
 
-
 function App() {
+
+  const[tripToEdit, setTripToEdit] = useState(null)
+
+  const editTrip = (trip) => {
+    setTripToEdit(trip)
+  }
+
   return (
     <div className="App">
       <Header/>
@@ -23,8 +33,10 @@ function App() {
     <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/events' element={<Events/>}/>
-        <Route path='/trips' element={<Trips/>}/>
-        <Route path='/motorcycles' element={<Motorcycles/>}/>
+        <Route path='/trips' element={<Tripslist/>}/>
+        <Route path='/trips/:id' element={<Trip editTrip = {editTrip}/>}/>
+        <Route path='/trips/addTrip' element={<AddTrip tripToEdit = {tripToEdit}/>}/>
+        <Route path='/motorcycles' render={(props) => (<Motorcycles/>)}/>
         <Route path='/riders' element={<Riders/>}/>
         <Route path='/*' element={<NotFound/>}/>
     </Routes>

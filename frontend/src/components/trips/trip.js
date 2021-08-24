@@ -38,7 +38,7 @@ function Trip (props){
     return(
         <>
         <main>
-            <h1>THIS TRIP</h1>
+            <h1>Trip Details</h1>
             {/* Print out trips */}
             <div className="col-lg-4 pb-1">
                 <div className="card center">

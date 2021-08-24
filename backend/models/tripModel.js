@@ -23,6 +23,7 @@ const TripSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
+    
     /* Could be many riders for one trip */
     rider_id: [
             {

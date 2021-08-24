@@ -16,6 +16,7 @@ export default class TripsDAO{
         try{
             trips = await conn.db(process.env.MOTORCYCLES_TRIPS_NS).collection("trips")
         }
+
         catch(e){
             console.error(`Unable to connect to collection: ${e}`)
         }
@@ -32,7 +33,7 @@ export default class TripsDAO{
             return tripsList
         }
 
-        catch(e){
+        catch(e){ 
             console.error(e.message)
             return {}
         }

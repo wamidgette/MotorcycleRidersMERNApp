@@ -17,10 +17,14 @@ function TripsList (props){
         []
     )
 
+    props.editTrip(null);
+
     return(
         <>
         <main>
             <h1>Trips content</h1>
+            {/* Link to add new trip */}
+            <Link to={"/trips/addTrip"} className = "btn btn-primary col-lg-5 mx-1 mb-1">Add Trip</Link>
             {/* Print out trips */}
             <div className = "row">
                 {trips.map((trip)=>{

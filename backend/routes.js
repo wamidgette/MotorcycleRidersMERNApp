@@ -2,9 +2,9 @@
 //import controllers
 import express from "express"
 import TripsCtrl from "./controllers/tripsController.js"
-/* import RidersCtrl from "./controllers/ridersController.js"
+/* import RidersCtrl from "./controllers/ridersController.js" */
 import EventsCtrl from "./controllers/eventsController.js"
-import MotorcyclesCtrl from "./controllers/motorcyclesController.js" */
+/* import MotorcyclesCtrl from "./controllers/motorcyclesController.js"  */
 
 const router = express.Router()
 //from base url /motorcycleTripsProject - route extensions
@@ -28,12 +28,12 @@ router.route("/riders").put(RidersCtrl.editRider);
 router.route("/riders").delete(RidersCtrl.deleteRider) */
 
 /* Events Routes*/
-/* router.route("/events").get(EventsCtrl.getEvents);
+router.route("/events").get(EventsCtrl.getEvents);
 router.route("/events/id/:id").get(EventsCtrl.getEventById);
 
 router.route("/events").post(EventsCtrl.addEvent);
 router.route("/events").put(EventsCtrl.editEvent);
-router.route("/events").delete(EventsCtrl.deleteEvent) */
+router.route("/events").delete(EventsCtrl.deleteEvent) 
 /* Motorcycles Routes*/
 /* router.route("/motorcycles").get(MotorcyclesCtrl.getMotorcycles);
 router.route("/motorcycles/id/:id").get(MotorcyclesCtrl.getMotorcycleById);

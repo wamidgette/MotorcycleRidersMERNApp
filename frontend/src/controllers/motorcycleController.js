@@ -1,4 +1,4 @@
-import http from "../htmlCommon";
+import http from "../httpCommon";
 
 /* Create a controller class with methods to make database requests */
 class EventController {

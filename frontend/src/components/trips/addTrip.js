@@ -10,9 +10,9 @@ const AddTrip = props => {
     let trip = ""
 
     /* Set edit = true if object passed and update initial object to the object passed */
-    if(props.tripToEdit !== null){
+    if(props.trip !== null){
         edit = true
-        trip = props.tripToEdit
+        trip = props.trip
     }
 
     /* Initial trip properties */

@@ -50,6 +50,7 @@ function Trip (props){
                         <li>End Location: {trip.end_location}</li>    
                         {/* Link to update page sending the current trip as state data */}
                         <Link to={"/trips/addTrip"} className = "btn btn-primary col-lg-5 mx-1 mb-1">Update</Link>
+                        <Link to={"/trips/delete"} className = "btn btn-primary col-lg-5 mx-1 mb-1">Delete</Link>
                     </ul>
                 </div>
             </div>    

@@ -13,9 +13,11 @@ import Home from './components/home/home'
 import Event from './components/events/event';
 import EventsList from './components/events/eventList';
 import AddEvent from './components/events/addEvent';
+import DeleteEvent from './components/events/delete';
 import Tripslist from './components/trips/tripsList';
 import Trip from './components/trips/trip';
 import AddTrip from './components/trips/addTrip';
+import DeleteTrip from './components/trips/delete';
 import Motorcycles from './components/motorcycles/motorcycles';
 import Riders from './components/riders/riders';
 import NotFound from './components/notFound';
@@ -42,9 +44,11 @@ function App() {
         <Route path='/events' element={<EventsList editEvent = {editEvent}/>}/>
         <Route path='/events/:id' element={<Event editEvent = {editEvent}/>}/>
         <Route path='/events/addEvent' element={<AddEvent event = {event}/>}/>
+        <Route path='/events/delete' element={<DeleteEvent event = {event}/>}/>
         <Route path='/trips' element={<Tripslist editTrip = {editTrip}/>}/>
         <Route path='/trips/:id' element={<Trip editTrip = {editTrip}/>}/>
         <Route path='/trips/addTrip' element={<AddTrip trip = {trip}/>}/>
+        <Route path='/trips/delete' element={<DeleteTrip trip = {trip}/>}/>
         <Route path='/motorcycles' render={(props) => (<Motorcycles/>)}/>
         <Route path='/riders' element={<Riders/>}/>
         <Route path='/*' element={<NotFound/>}/>

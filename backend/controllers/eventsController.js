@@ -71,7 +71,7 @@ export default class EventsController {
     /*  DELETE "/events Method takes Id parameter and calls the DAO method dbDeleteEvent - returns success message to user" */
     static async deleteEvent(req, res, next){
         try{
-            let eventId = req.body._id
+            let eventId = req.params.id
             let response = await EventsDAO.dbDeleteEvent(eventId)
             /* Confirm successful delete to user */
             res.json({status : "success"})

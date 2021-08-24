@@ -47,6 +47,7 @@ function Event (props){
                         <li>Event Location: {event.event_location}</li>    
                         {/* Link to update page sending the current event as state data */}
                         <Link to={"/events/addEvent"} className = "btn btn-primary col-lg-5 mx-1 mb-1">Update</Link>
+                        <Link to={"/events/delete"} className = "btn btn-primary col-lg-5 mx-1 mb-1">Delete</Link>
                     </ul>
                 </div>
             </div>    

@@ -17,8 +17,8 @@ class TripController{
         return http.put("/trips", data)
     }
 
-    delete(data){
-        return http.delete("/trips", data)
+    deleteTrip(tripId){
+        return http.delete(`/trips/${tripId}`)
     }
 }
 

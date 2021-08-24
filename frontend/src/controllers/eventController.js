@@ -20,8 +20,8 @@ class EventController {
         return http.put('/events', data)
     }
 
-    deleteEvent(data){
-        return http.delete('/events', data)
+    deleteEvent(eventId){
+        return http.delete(`/events/${eventId}`)
     }
 
     /* Later -> getRidersForEvent */

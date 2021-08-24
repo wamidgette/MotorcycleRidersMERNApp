@@ -16,7 +16,7 @@ router.route("/trips/id/:id").get(TripsCtrl.getTripById);
 /* All other requests C, U, D */
 router.route("/trips").post(TripsCtrl.addTrip);
 router.route("/trips").put(TripsCtrl.editTrip);
-router.route("/trips").delete(TripsCtrl.deleteTrip) 
+router.route("/trips/:id").delete(TripsCtrl.deleteTrip) 
 
 /* ROUTES TO BE CODED... */
 /* Riders Routes*/
@@ -33,7 +33,7 @@ router.route("/events/id/:id").get(EventsCtrl.getEventById);
 
 router.route("/events").post(EventsCtrl.addEvent);
 router.route("/events").put(EventsCtrl.editEvent);
-router.route("/events").delete(EventsCtrl.deleteEvent) 
+router.route("/events/:id").delete(EventsCtrl.deleteEvent) 
 /* Motorcycles Routes*/
 /* router.route("/motorcycles").get(MotorcyclesCtrl.getMotorcycles);
 router.route("/motorcycles/id/:id").get(MotorcyclesCtrl.getMotorcycleById);

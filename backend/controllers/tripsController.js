@@ -73,7 +73,8 @@ export default class TripsController {
     /*  DELETE "/trips Method takes Id parameter and calls the DAO method dbDeleteTrip - returns success message to user" */
     static async deleteTrip(req, res, next){
         try{
-            let tripId = req.body._id
+
+            let tripId = req.params.id
             let response = await TripsDAO.dbDeleteTrip(tripId)
             /* Confirm successful delete to user */
             res.json({status : "success"})

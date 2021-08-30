@@ -69,20 +69,20 @@ const AddTrip = props => {
         };
 
         /* Functions to update the current trip object as user makes changes to input fields */
-        const nameValueChange = event => {
-            setTripName(event.target.value);
+        const nameValueChange = e => {
+            setTripName(e.target.value);
         };
-        const startDateValueChange = event => {
-            setTripStart(event.target.value);
+        const startDateValueChange = e => {
+            setTripStart(e.target.value);
         };
-        const endDateValueChange = event => {
-            setTripEnd(event.target.value);
+        const endDateValueChange = e => {
+            setTripEnd(e.target.value);
         };
-        const startLocationChange = event => {
-            setStartLocation(event.target.value);
+        const startLocationChange = e => {
+            setStartLocation(e.target.value);
         };
-        const endLocationChange = event => {
-            setEndLocation(event.target.value);
+        const endLocationChange = e => {
+            setEndLocation(e.target.value);
         };
 
         /* Render the object properties in a form for client*/
@@ -95,43 +95,40 @@ const AddTrip = props => {
                 {submitted? (
                     <h3>Trip has been submitted</h3>
                 ) : (/* else, render form for user to update/add based on object properties */
-                    <div className="row">                    
-                    <div className="col-lg-4 pb-1">
-                        <div className="card ">
-                            <div className="card-body">
-                                {/* If editing, object id will already be set, else do not include */}
-                                {edit? (
-                                    <div>
-                                        <input hidden value = {tripId}></input>
-                                    </div>) : (
-                                    ""
-                                )}
+                    <div className="boxContainer">                    
+                        <div className="box">
+                            {/* If editing, object id will already be set, else do not include */}
+                            {edit? (
                                 <div>
-                                    <label htmlFor="">Trip Name: </label>
-                                    <input type="text" onChange={nameValueChange} value = {tripName}></input>
-                                </div>
-                                <div>
-                                    <label htmlFor="">Start Location: </label>
-                                    <input type="text" onChange={startLocationChange} value = {startLocation}></input>
-                                </div>
-                                <div>
-                                    <label htmlFor="">End Location: </label>
-                                    <input type="text" onChange={endLocationChange} value = {endLocation}></input>
-                                </div>
-                                <div>
-                                    <label htmlFor="">Start Date: </label>
-                                    <input type="date" onChange={startDateValueChange} value = {tripStart}></input>
-                                </div>
-                                <div>
-                                    <label htmlFor="">End Date: </label>
-                                    <input type="date" onChange={endDateValueChange} value = {tripEnd}></input>
-                                </div>
-                                {/* Edit? Show an update button that calls the update function and update db method. If not, show an add button that calls the add function db method */}
-                                {edit? (<button onClick={saveTrip} className="btn btn-success">Update Trip</button>) : (<button onClick={saveTrip} className="btn btn-success">Add Trip</button>)}
+                                    <h3 className = "boxTitle">Update This Trip</h3>
+                                    <input hidden value = {tripId}></input>
+                                </div>) : (
+                                    <h3 className = "boxTitle">Add a Trip</h3>
+                            )}
+                            <div className = "boxBlock">
+                                <label htmlFor="">Trip Name: </label>
+                                <input type="text" onChange={nameValueChange} value = {tripName}></input>
                             </div>
+                            <div className = "boxBlock">
+                                <label htmlFor="">Start Location: </label>
+                                <input type="text" onChange={startLocationChange} value = {startLocation}></input>
+                            </div>
+                            <div className = "boxBlock">
+                                <label htmlFor="">End Location: </label>
+                                <input type="text" onChange={endLocationChange} value = {endLocation}></input>
+                            </div>
+                            <div className = "boxBlock">
+                                <label htmlFor="">Start Date: </label>
+                                <input type="date" onChange={startDateValueChange} value = {tripStart}></input>
+                            </div>
+                            <div className = "boxBlock"> 
+                                <label htmlFor="">End Date: </label>
+                                <input type="date" onChange={endDateValueChange} value = {tripEnd}></input>
+                            </div>
+                            {/* Edit? Show an update button that calls the update function and update db method. If not, show an add button that calls the add function db method */}
+                            {edit? (<button onClick={saveTrip} className="boxLink">Update Trip</button>) : (<button onClick={saveTrip} className="boxLink">Add Trip</button>)}
                         </div>
                     </div>
-                    </div>    
                 )}
                 
             </main>

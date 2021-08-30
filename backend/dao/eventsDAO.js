@@ -14,7 +14,7 @@ export default class EventsDAO{
         }
         
         try{
-            events = await conn.db(process.env.MOTORCYCLES_EVENTS_NS).collection("events")
+            events = await conn.db(process.env.MOTORCYCLES_TRIPS_NS).collection("events")
         }
 
         catch(e){

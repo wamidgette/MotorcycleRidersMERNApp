@@ -38,17 +38,17 @@ function Event (props){
         <main>
             <h1>THIS EVENT</h1>
             {/* Print out events */}
-            <div className="col-lg-4 pb-1">
-                <div className="card center">
-                    <h1>{event.event_name}</h1>
-                    <ul>
-                        <li>Event Starts: {event.event_start}</li>    
-                        <li>Event Ends: {event.event_end}</li>    
-                        <li>Event Location: {event.event_location}</li>    
+            <div className="boxContainer">
+                <div className="box">
+                    <h1 className = "boxBlock">{event.event_name}</h1>
+                    <ul className = "boxBlock">
+                        <li><strong>Event Starts:</strong> {event.event_start}</li>    
+                        <li><strong>Event Ends:</strong> {event.event_end}</li>    
+                        <li><strong>Event Location:</strong> {event.event_location}</li>    
                         {/* Link to update page sending the current event as state data */}
-                        <Link to={"/events/addEvent"} className = "btn btn-primary col-lg-5 mx-1 mb-1">Update</Link>
-                        <Link to={"/events/delete"} className = "btn btn-primary col-lg-5 mx-1 mb-1">Delete</Link>
                     </ul>
+                    <Link to={"/events/addEvent"} className = "boxLink">Update</Link>
+                    <Link to={"/events/delete"} className = "secondaryBoxLink">Delete</Link>
                 </div>
             </div>    
         </main>

@@ -4,6 +4,8 @@ import dotenv from 'dotenv'
 /* import RidersDAO from './dao/ridersDAO.js' */
 import TripsDAO from './dao/tripsDAO.js'
 import EventsDAO from './dao/eventsDAO.js'
+import RidersDAO from './dao/ridersDAO.js'
+import MotorcyclesDAO from './dao/motorcyclesDAO.js'
 /* import MotorcyclesDAO from './dao/motorcyclesDAO.js'  */
 /* Configure database connection string, collections, and port - see .env*/
 dotenv.config()
@@ -29,6 +31,8 @@ MongoClient.connect(
     /* await RidersDAO.injectDB(client) */
     await TripsDAO.injectDB(client)
     await EventsDAO.injectDB(client)
+    await RidersDAO.injectDB(client)
+    await MotorcyclesDAO.injectDB(client)
     /* await MotorcyclesDAO.injectDB(client)  */
     app.listen(port, () => {
         console.log(`listening on port ${port}`)

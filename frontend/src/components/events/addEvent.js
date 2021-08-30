@@ -63,17 +63,17 @@ const AddEvent = props => {
     };
 
     /* Functions to update the current event object as user makes changes to input fields */
-    const nameValueChange = event => {
-        setEventName(event.target.value);
+    const nameValueChange = e => {
+        setEventName(e.target.value);
     };
-    const startDateValueChange = event => {
-        setEventStart(event.target.value);
+    const startDateValueChange = e => {
+        setEventStart(e.target.value);
     };
-    const endDateValueChange = event => {
-        setEventEnd(event.target.value);
+    const endDateValueChange = e => {
+        setEventEnd(e.target.value);
     };
-    const eventLocationChange = event => {
-        setEventLocation(event.target.value);
+    const eventLocationChange = e => {
+        setEventLocation(e.target.value);
     };
 
 
@@ -87,39 +87,36 @@ const AddEvent = props => {
                 {submitted? (
                     <h3>Event has been submitted</h3>
                 ) : (/* else, render form for user to update/add based on object properties */
-                    <div className="row">                    
-                    <div className="col-lg-4 pb-1">
-                        <div className="card ">
-                            <div className="card-body">
+                    <div className="boxContainer">                    
+                        <div className="box ">
                                 {/* If editing, object id will already be set, else do not include */}
                                 {edit? (
-                                    <div>
+                                    <>
+                                        <h3 className = "boxTitle">Update This Event</h3>
                                         <input hidden value = {eventId}></input>
-                                    </div>) : (
-                                    ""
+                                    </>) : (
+                                        <h3 className = "boxTitle">Add an Event</h3>
                                 )}
-                                <div>
+                                <div className = "boxBlock">
                                     <label htmlFor="">Event Name: </label>
                                     <input type="text" onChange={nameValueChange} value = {eventName}></input>
                                 </div>
-                                <div>
-                                    <label htmlFor="">Start Location: </label>
+                                <div className = "boxBlock">
+                                    <label htmlFor="">Event Location: </label>
                                     <input type="text" onChange={eventLocationChange} value = {eventLocation}></input>
                                 </div>
-                                <div>
+                                <div className = "boxBlock">
                                     <label htmlFor="">Start Date: </label>
                                     <input type="date" onChange={startDateValueChange} value = {eventStart}></input>
                                 </div>
-                                <div>
+                                <div className = "boxBlock">
                                     <label htmlFor="">End Date: </label>
                                     <input type="date" onChange={endDateValueChange} value = {eventEnd}></input>
                                 </div>
                                 {/* Edit? Show an update button that calls the update function and update db method. If not, show an add button that calls the add function db method */}
-                                {edit? (<button onClick={saveEvent} className="btn btn-success">Update Event</button>) : (<button onClick={saveEvent} className="btn btn-success">Add Event</button>)}
-                            </div>
+                                {edit? (<button onClick={saveEvent} className="boxLink">Update Event</button>) : (<button onClick={saveEvent} className="boxLink">Add Event</button>)}
                         </div>
                     </div>
-                    </div>    
                 )}
             </main>
         </>

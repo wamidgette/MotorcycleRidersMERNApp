@@ -40,20 +40,20 @@ function Trip (props){
         <main>
             <h1>Trip Details</h1>
             {/* Print out trips */}
-            <div className="col-lg-4 pb-1">
-                <div className="card center">
-                    <h1>{trip.trip_name}</h1>
-                    <ul>
-                        <li>Trip Starts: {trip.trip_start}</li>    
-                        <li>Trip Ends: {trip.trip_end}</li>    
-                        <li>Start Location: {trip.start_location}</li>    
-                        <li>End Location: {trip.end_location}</li>    
+            <div className="boxContainer">
+                <div className="box">
+                    <h2 className = "boxBlock">{trip.trip_name}</h2>
+                    <ul className = "boxBlock">
+                        <li><strong>Trip Starts: </strong>{trip.trip_start}</li>    
+                        <li><strong>Trip Ends: </strong>{trip.trip_end}</li>    
+                        <li><strong>Start Location: </strong>{trip.start_location}</li>    
+                        <li><strong>End Location:</strong> {trip.end_location}</li>    
                         {/* Link to update page sending the current trip as state data */}
-                        <Link to={"/trips/addTrip"} className = "btn btn-primary col-lg-5 mx-1 mb-1">Update</Link>
-                        <Link to={"/trips/delete"} className = "btn btn-primary col-lg-5 mx-1 mb-1">Delete</Link>
                     </ul>
+                    <Link to={"/trips/addTrip"} className = "boxLink">Update</Link>
+                    <Link to={"/trips/delete"} className = "secondaryBoxLink">Delete</Link>
                 </div>
-            </div>    
+            </div>   
         </main>
         </>
     )

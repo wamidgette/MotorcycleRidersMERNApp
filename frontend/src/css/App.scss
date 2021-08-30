@@ -1,0 +1,250 @@
+$box-background: #fff;
+/* Extends */
+%primary-button{
+  background:rgb(64, 64, 255);
+  color:#fff;
+  font-size: 20px;
+  text-decoration:none;
+  border-radius: 1em;
+  padding:0.5em
+}
+
+%flexRowContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: space-around;
+}
+
+%standardText{
+  font-size: calc(15px + 2vmin);
+}
+
+/* GENERAL */
+
+ul li{
+  list-style-type: none;
+}
+
+label{
+  margin-right:0.5em;
+}
+
+.primaryButton{
+  background:rgb(64, 64, 255);
+  color:#fff;
+  font-size: 20px;
+  text-decoration:none;
+  border-radius: 1em;
+  padding:0.5em;
+  max-width:300px;
+  width:100%;
+}
+
+.primaryButton:hover{
+  color:chocolate
+}
+
+.secondaryButton:hover{
+  color:black;
+}
+
+.hiddenTitle{
+  position:absolute;
+  left:-10000px
+}
+
+.App{
+  text-align: center;
+  min-height:100vh;
+  display:flex;
+  flex-direction: column;
+}
+
+.body{
+  margin:2vw;
+  display:flex;
+  flex-direction: column;
+  justify-content: stretch;
+  background: chocolate;
+}
+
+.header{
+  flex : 1 1 150px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #80A8B5;
+}
+
+.header div{
+  @extend %flexRowContainer;
+  align-items: center;
+}
+.nav{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content: space-around;
+  color: white;
+  background:black;
+
+}
+
+.siteTitle{
+  position:absolute;
+  color:black;
+  font-size: calc(30px + 2vmin);
+  text-decoration: none;
+  left:20vw;
+}
+
+.navLink{
+  color:white;
+  font-size: calc(10px + 2vmin);
+  text-decoration: none;
+}
+
+.navLink:hover{
+  color:rgb(255, 126, 126);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+main{
+  flex: 5 1 700px;
+  display: flex;
+  flex-direction: column;
+  justify-self: space-around;
+  align-items: center;
+  background: #80A8B5;
+}
+
+.banner{
+  position:relative;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.banner::after{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background: white;
+  opacity:20%;
+}
+
+.banner .pageTitle{
+  color:black;
+  position:absolute;
+  font-size: 5vw;
+  align-self: center;
+  z-index: 1;
+}
+
+.bannerImage{
+  width:100%;
+}
+
+.filterBox{
+  @extend %flexRowContainer;
+  background: white;
+  padding:1em;
+  width:100%;
+  margin-bottom: 0.5em;
+  min-height:200px;
+  align-items: center;
+}
+
+.filterBox p{
+  @extend %standardText;
+  flex:1 0 100%;
+}
+
+.boxContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: space-around;
+}
+
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background:$box-background;
+  min-height:300px;
+  margin:1em;
+  min-width:350px;
+  flex: 1 1 0;
+  padding:1em;
+  font-size:20px;
+  border-radius: 1em;
+}
+
+.imageContainer{
+  height:150px;
+}
+
+.box div img{
+  height:100%;
+}
+
+.boxBlock{
+  flex: 1 1 75px;
+  padding:0;
+}
+
+.boxTitle{
+  flex: 1 1 75px;
+}
+
+.boxParagraph{
+  flex: 1 1 0px;
+}
+
+.boxLink{
+  @extend %primary-button;
+  flex: 1 1 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width:300px;
+  width:100%;
+}
+
+.secondaryBoxLink{
+  @extend %primary-button;
+  background: red;
+  flex: 1 1 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width:300px;
+  width:100%;
+}
+
+.boxLink:hover{
+  color:chocolate;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.footer{
+  flex: 1 1 300px;
+  background:black;
+  color:white;
+  justify-content: space-between;
+}

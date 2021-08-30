@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {useState, useEffect} from "react"
 import eventsData from '../../controllers/eventController.js'
+import image from "../../images/node.png"
 
 function EventsList (props){
     
@@ -22,22 +23,21 @@ function EventsList (props){
     return(
         <>
         <main>
-            <h1>Events content</h1>
+            <h1>Events</h1>
             {/* Link to add new event */}
-            <Link to={"/events/addEvent"} className = "btn btn-primary col-lg-5 mx-1 mb-1">Add Event</Link>
+            <Link to={"/events/addEvent"} className = "primaryButton">Add Event</Link>
             {/* Print out events */}
-            <div className = "row">
+            <div className = "boxContainer">
                 { console.log(events) }
                 {events.map((event)=>{
                     return(
-                    <div className="col-lg-4 pb-1">
-                        <div className="card">
-                            <div className="card-body">
-                                <h3 className="card-title">{event.event_name}</h3>
-                                <p>{event.event_start} to {event.event_end}</p>
-                                <Link to={"/events/"+event._id} className = "btn btn-primary col-lg-5 mx-1 mb-1">Details</Link>
-                            </div>
+                    <div className="box">
+                        <div className = "imageContainer">
+                            <img src={image} alt="event image"/>
                         </div>
+                        <h3 className="boxTitle">{event.event_name}</h3>
+                        <p className = "boxParagraph">{event.event_start} to {event.event_end}</p>
+                        <Link to={"/events/"+event._id} className = "boxLink">Details</Link>
                     </div>
                     )
                 })}

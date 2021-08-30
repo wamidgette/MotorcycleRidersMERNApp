@@ -2,11 +2,12 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {useState, useEffect} from "react"
 import tripsData from '../../controllers/tripController.js'
-
+import image from "../../images/node.png"
+import Banner from "../banner.js"
 function TripsList (props){
     
     const [trips, setTrips] = useState([])
-    
+    const collection = "trips";
     /* function sends get request to node api method getTrips */ 
     useEffect(()=>
         {tripsData.getAll()
@@ -22,21 +23,23 @@ function TripsList (props){
     return(
         <>
         <main>
-            <h1>Trips content</h1>
+            <Banner collection = {collection}/>
             {/* Link to add new trip */}
-            <Link to={"/trips/addTrip"} className = "btn btn-primary col-lg-5 mx-1 mb-1">Add Trip</Link>
+            <div className = "filterBox">
+                <p>Have a look through the trips we have coming up!</p>
+                <Link to={"/trips/addTrip"} className = "boxLink">Add Trip</Link>
+            </div>
             {/* Print out trips */}
-            <div className = "row">
+            <div className = "boxContainer">
                 {trips.map((trip)=>{
                     return(
-                    <div className="col-lg-4 pb-1">
-                        <div className="card">
-                            <div className="card-body">
-                                <h3 className="card-title">{trip.trip_name}</h3>
-                                <p>{trip.trip_start} to {trip.trip_end}</p>
-                                <Link to={"/trips/"+trip._id} className = "btn btn-primary col-lg-5 mx-1 mb-1">Details</Link>
-                            </div>
+                    <div className="box">
+                        <div className = "imageContainer">
+                            <img src={image} alt="motorcycle image"/>
                         </div>
+                        <h3 className="boxTitle">{trip.trip_name}</h3>
+                        <p className = "boxParagraph">{trip.trip_start} to {trip.trip_end}</p>
+                        <Link to={"/trips/"+trip._id} className = "boxLink">Details</Link>
                     </div>
                     )
                 })}
